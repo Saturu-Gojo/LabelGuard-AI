@@ -1,0 +1,93 @@
+{
+  "version": "demo-ruleset-0.1",
+  "disclaimer": "Demo/test rules for prototype purposes only. Not a regulatory determination.",
+  "field_labels": {
+    "product_name": "Product name",
+    "product_id": "Product identifier",
+    "udi": "Unique Device Identification",
+    "manufacturer_details": "Manufacturer details",
+    "sterilization_statement": "Sterilization statement",
+    "sterilization_symbol": "Sterilization symbol",
+    "safety_warnings": "Safety warnings",
+    "logo": "Logo",
+    "other_text": "Other text",
+    "visual_region": "Unattributed visual difference",
+    "ignored": "Ignored banner"
+  },
+  "criticality": {
+    "udi": "critical",
+    "safety_warnings": "critical",
+    "product_id": "major",
+    "product_name": "major",
+    "manufacturer_details": "major",
+    "sterilization_statement": "major",
+    "sterilization_symbol": "major",
+    "logo": "minor",
+    "other_text": "minor",
+    "visual_region": "minor"
+  },
+  "required_fields": {
+    "udi": "LG-REQ-001",
+    "safety_warnings": "LG-REQ-002",
+    "manufacturer_details": "LG-REQ-003",
+    "sterilization_symbol": "LG-REQ-004",
+    "product_id": "LG-REQ-005"
+  },
+  "field_classifier": [
+    [
+      "ignored",
+      "^TEST DOCUMENT"
+    ],
+    [
+      "udi",
+      "\\bUDI\\b|^\\(?01\\)?\\s*\\d{14}"
+    ],
+    [
+      "product_id",
+      "^\\s*(REF|CAT|CATALOG|PRODUCT\\s*ID)\\b"
+    ],
+    [
+      "manufacturer_details",
+      "manufactur"
+    ],
+    [
+      "sterilization_statement",
+      "steril"
+    ],
+    [
+      "safety_warnings",
+      "warning|do not reuse|caution|do not use"
+    ]
+  ],
+  "sterilization_symbols": [
+    "sterile_eo",
+    "sterile_radiation",
+    "sterile_steam"
+  ],
+  "value_aliases": {
+    "radiation": [
+      "radiation",
+      "irradiat",
+      "sterile_radiation",
+      "gamma",
+      "e-beam",
+      "electron beam"
+    ],
+    "eo": [
+      "eo",
+      "ethylene oxide",
+      "sterile_eo"
+    ],
+    "steam": [
+      "steam",
+      "autoclave",
+      "sterile_steam"
+    ]
+  },
+  "tolerances": {
+    "position_pts": 5,
+    "symbol_match": 0.8,
+    "text_fuzzy_pair": 80,
+    "visual_pad_pts": 8
+  }
+}

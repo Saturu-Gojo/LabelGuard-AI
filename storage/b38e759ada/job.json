@@ -1,0 +1,48 @@
+{
+  "id": "b38e759ada",
+  "product_id": "STENT101",
+  "product_name": "Cardiac Stent",
+  "market": "EU",
+  "language": "English",
+  "old_version": "V1",
+  "new_version": "V2",
+  "change_reason": "Sterilization update",
+  "change_request": "Update the sterilization method from EO to Radiation. Keep UDI, product identification, manufacturer details, and safety warnings unchanged.",
+  "status": "REVIEW_REQUIRED",
+  "created_by": "demo.user",
+  "created_at": "2026-11-01T22:25:08",
+  "contract": {
+    "change_id": "CHG-B38E",
+    "reason": "Sterilization update",
+    "allowed_changes": [
+      {
+        "field": "sterilization_symbol",
+        "expected_value": "radiation"
+      },
+      {
+        "field": "sterilization_statement",
+        "expected_value": "radiation"
+      }
+    ],
+    "protected_fields": [
+      "udi",
+      "product_id",
+      "manufacturer_details",
+      "safety_warnings"
+    ],
+    "requires_human_review": true,
+    "generated_by": "heuristic+edited",
+    "status": "CONFIRMED",
+    "confirmed_by": "demo.user"
+  },
+  "approvals": [],
+  "summary": {
+    "passed_checks": 14,
+    "failed_checks": 3,
+    "critical_flags": 2,
+    "review_flags": 1,
+    "unexpected": 2,
+    "expected": 2,
+    "total_findings": 5
+  }
+}

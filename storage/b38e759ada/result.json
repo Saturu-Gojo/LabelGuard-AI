@@ -1,0 +1,759 @@
+{
+  "ruleset_version": "demo-ruleset-0.1",
+  "disclaimer": "Demo/test rules for prototype purposes only. Not a regulatory determination.",
+  "contract": {
+    "change_id": "CHG-B38E",
+    "reason": "Sterilization update",
+    "allowed_changes": [
+      {
+        "field": "sterilization_symbol",
+        "expected_value": "radiation"
+      },
+      {
+        "field": "sterilization_statement",
+        "expected_value": "radiation"
+      }
+    ],
+    "protected_fields": [
+      "udi",
+      "product_id",
+      "manufacturer_details",
+      "safety_warnings"
+    ],
+    "requires_human_review": true,
+    "generated_by": "heuristic+edited",
+    "status": "CONFIRMED",
+    "confirmed_by": "demo.user"
+  },
+  "documents": {
+    "old_sha256": "195b101a4f1ae54529a913888aaf4432b07a0a299f5e5ef1acd7060b36e96768",
+    "new_sha256": "420a9a72ec037f38546bcf5df719a70e01489a6222f64734a9ae5a2526801b5d"
+  },
+  "summary": {
+    "passed_checks": 14,
+    "failed_checks": 3,
+    "critical_flags": 2,
+    "review_flags": 1,
+    "unexpected": 2,
+    "expected": 2,
+    "total_findings": 5
+  },
+  "findings": [
+    {
+      "field": "safety_warnings",
+      "field_label": "Safety warnings",
+      "classification": "UNEXPECTED",
+      "severity": "critical",
+      "change_type": "removed",
+      "title": "Safety warnings: removed",
+      "old_value": "WARNING: Do not reuse. Do not use if package is damaged.",
+      "new_value": null,
+      "contract_statement": "Change request CHG-B38E explicitly protects this field.",
+      "sources": [
+        "text",
+        "visual"
+      ],
+      "evidence": [
+        {
+          "source": "text",
+          "page": 1,
+          "bbox_old": [
+            30.0,
+            219.3,
+            315.6,
+            233.1
+          ],
+          "bbox_new": null,
+          "old": "WARNING: Do not reuse. Do not use if package is damaged.",
+          "new": null
+        },
+        {
+          "source": "visual",
+          "page": 1,
+          "bbox_old": [
+            24.0,
+            216.5,
+            321.1,
+            238.6
+          ],
+          "bbox_new": [
+            24.0,
+            216.5,
+            321.1,
+            238.6
+          ],
+          "old": null,
+          "new": null
+        }
+      ],
+      "explanation": "Safety warnings is missing on the revised label. Change request CHG-B38E explicitly protects this field.",
+      "recommended_action": "Verify the correct value against the source of truth and regenerate the candidate label if the change was not intended.",
+      "rule_refs": [
+        "LG-CONTRACT-PROTECTED",
+        "LG-REQ-002"
+      ],
+      "status": "OPEN",
+      "id": "LG-001"
+    },
+    {
+      "field": "udi",
+      "field_label": "Unique Device Identification",
+      "classification": "UNEXPECTED",
+      "severity": "critical",
+      "change_type": "modified",
+      "title": "Unique Device Identification: modified",
+      "old_value": "UDI: (01) 00812345678901",
+      "new_value": "UDI: (01) 00812345678994",
+      "contract_statement": "Change request CHG-B38E explicitly protects this field.",
+      "sources": [
+        "barcode",
+        "text",
+        "visual"
+      ],
+      "evidence": [
+        {
+          "source": "text",
+          "page": 1,
+          "bbox_old": [
+            160.0,
+            339.2,
+            281.2,
+            353.0
+          ],
+          "bbox_new": [
+            160.0,
+            339.2,
+            281.2,
+            353.0
+          ],
+          "old": "UDI: (01) 00812345678901",
+          "new": "UDI: (01) 00812345678994"
+        },
+        {
+          "source": "barcode",
+          "page": 1,
+          "bbox_old": [
+            36.5,
+            316.3,
+            133.4,
+            413.3
+          ],
+          "bbox_new": [
+            36.5,
+            316.3,
+            133.4,
+            413.3
+          ],
+          "old": "0100812345678901",
+          "new": "0100812345678994"
+        },
+        {
+          "source": "visual",
+          "page": 1,
+          "bbox_old": [
+            264.0,
+            336.5,
+            287.0,
+            356.2
+          ],
+          "bbox_new": [
+            264.0,
+            336.5,
+            287.0,
+            356.2
+          ],
+          "old": null,
+          "new": null
+        },
+        {
+          "source": "visual",
+          "page": 1,
+          "bbox_old": [
+            37.4,
+            324.0,
+            132.5,
+            412.3
+          ],
+          "bbox_new": [
+            37.4,
+            324.0,
+            132.5,
+            412.3
+          ],
+          "old": null,
+          "new": null
+        }
+      ],
+      "explanation": "Unique Device Identification changed from 'UDI: (01) 00812345678901' to 'UDI: (01) 00812345678994'. Change request CHG-B38E explicitly protects this field. Barcode payload: 0100812345678901 \u2192 0100812345678994.",
+      "recommended_action": "Verify the correct value against the source of truth and regenerate the candidate label if the change was not intended.",
+      "rule_refs": [
+        "LG-CONTRACT-PROTECTED"
+      ],
+      "status": "OPEN",
+      "id": "LG-002"
+    },
+    {
+      "field": "logo",
+      "field_label": "Logo",
+      "classification": "REQUIRES_REVIEW",
+      "severity": "minor",
+      "change_type": "moved",
+      "title": "Logo: moved",
+      "old_value": "x=270.0, y=55.0",
+      "new_value": "x=288.0, y=55.0",
+      "contract_statement": "This field is not covered by the change request; insufficient evidence to accept the change.",
+      "sources": [
+        "symbol",
+        "visual"
+      ],
+      "evidence": [
+        {
+          "source": "symbol",
+          "page": 1,
+          "bbox_old": [
+            270.0,
+            55.0,
+            360.0,
+            100.0
+          ],
+          "bbox_new": [
+            288.0,
+            55.0,
+            378.0,
+            100.0
+          ],
+          "old": "x=270.0, y=55.0",
+          "new": "x=288.0, y=55.0",
+          "detail": "Shifted by (18.0, 0.0) pt"
+        },
+        {
+          "source": "visual",
+          "page": 1,
+          "bbox_old": [
+            266.4,
+            51.4,
+            378.7,
+            104.2
+          ],
+          "bbox_new": [
+            266.4,
+            51.4,
+            378.7,
+            104.2
+          ],
+          "old": null,
+          "new": null
+        }
+      ],
+      "explanation": "Logo moved (Shifted by (18.0, 0.0) pt). This field is not covered by the change request; insufficient evidence to accept the change.",
+      "recommended_action": "Reviewer to inspect the highlighted region and confirm whether the change is acceptable; document the rationale.",
+      "rule_refs": [],
+      "status": "OPEN",
+      "id": "LG-003"
+    },
+    {
+      "field": "sterilization_statement",
+      "field_label": "Sterilization statement",
+      "classification": "EXPECTED",
+      "severity": "informational",
+      "change_type": "modified",
+      "title": "Sterilization statement: modified",
+      "old_value": "Sterilized using ethylene oxide",
+      "new_value": "Sterilized using irradiation",
+      "contract_statement": "Change request CHG-B38E allows this field to change to 'radiation'.",
+      "sources": [
+        "text",
+        "visual"
+      ],
+      "evidence": [
+        {
+          "source": "text",
+          "page": 1,
+          "bbox_old": [
+            140.0,
+            149.2,
+            275.1,
+            163.0
+          ],
+          "bbox_new": [
+            140.0,
+            149.2,
+            254.5,
+            163.0
+          ],
+          "old": "Sterilized using ethylene oxide",
+          "new": "Sterilized using irradiation"
+        },
+        {
+          "source": "visual",
+          "page": 1,
+          "bbox_old": [
+            205.0,
+            146.4,
+            280.8,
+            168.0
+          ],
+          "bbox_new": [
+            205.0,
+            146.4,
+            280.8,
+            168.0
+          ],
+          "old": null,
+          "new": null
+        }
+      ],
+      "explanation": "Sterilization statement changed from 'Sterilized using ethylene oxide' to 'Sterilized using irradiation'. Change request CHG-B38E allows this field to change to 'radiation'.",
+      "recommended_action": "No action required; confirm that the new value is correct for the target market.",
+      "rule_refs": [
+        "LG-CONTRACT-ALLOWED"
+      ],
+      "status": "OPEN",
+      "id": "LG-004"
+    },
+    {
+      "field": "sterilization_symbol",
+      "field_label": "Sterilization symbol",
+      "classification": "EXPECTED",
+      "severity": "informational",
+      "change_type": "modified",
+      "title": "Sterilization symbol: modified",
+      "old_value": "sterile_eo",
+      "new_value": "sterile_radiation",
+      "contract_statement": "Change request CHG-B38E allows this field to change to 'radiation'.",
+      "sources": [
+        "symbol",
+        "visual"
+      ],
+      "evidence": [
+        {
+          "source": "symbol",
+          "page": 1,
+          "bbox_old": [
+            30.0,
+            130.0,
+            126.0,
+            190.0
+          ],
+          "bbox_new": [
+            30.0,
+            130.0,
+            126.0,
+            190.0
+          ],
+          "old": "sterile_eo",
+          "new": "sterile_radiation"
+        },
+        {
+          "source": "visual",
+          "page": 1,
+          "bbox_old": [
+            59.5,
+            158.4,
+            97.4,
+            184.3
+          ],
+          "bbox_new": [
+            59.5,
+            158.4,
+            97.4,
+            184.3
+          ],
+          "old": null,
+          "new": null
+        }
+      ],
+      "explanation": "Sterilization symbol changed from 'sterile_eo' to 'sterile_radiation'. Change request CHG-B38E allows this field to change to 'radiation'.",
+      "recommended_action": "No action required; confirm that the new value is correct for the target market.",
+      "rule_refs": [
+        "LG-CONTRACT-ALLOWED"
+      ],
+      "status": "OPEN",
+      "id": "LG-005"
+    }
+  ],
+  "checks": [
+    {
+      "id": "LG-CHK-EXP",
+      "name": "Requested change applied: Sterilization symbol",
+      "passed": true,
+      "detail": "sterile_eo \u2192 sterile_radiation"
+    },
+    {
+      "id": "LG-CHK-EXP",
+      "name": "Requested change applied: Sterilization statement",
+      "passed": true,
+      "detail": "Sterilized using ethylene oxide \u2192 Sterilized using irradiation"
+    },
+    {
+      "id": "LG-CHK-PROT",
+      "name": "Protected field unchanged: Unique Device Identification",
+      "passed": false,
+      "detail": "Unique Device Identification changed from 'UDI: (01) 00812345678901' to 'UDI: (01) 00812345678994'. Change request CHG-B38E explicitly protects this field. Barcode payload: 0100812345678901 \u2192 0100812345678994."
+    },
+    {
+      "id": "LG-CHK-PROT",
+      "name": "Protected field unchanged: Product identifier",
+      "passed": true,
+      "detail": "No difference detected"
+    },
+    {
+      "id": "LG-CHK-PROT",
+      "name": "Protected field unchanged: Manufacturer details",
+      "passed": true,
+      "detail": "No difference detected"
+    },
+    {
+      "id": "LG-CHK-PROT",
+      "name": "Protected field unchanged: Safety warnings",
+      "passed": false,
+      "detail": "Safety warnings is missing on the revised label. Change request CHG-B38E explicitly protects this field."
+    },
+    {
+      "id": "LG-REQ-001",
+      "name": "Required element present: Unique Device Identification",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "id": "LG-REQ-002",
+      "name": "Required element present: Safety warnings",
+      "passed": false,
+      "detail": "Not found on revised label"
+    },
+    {
+      "id": "LG-REQ-003",
+      "name": "Required element present: Manufacturer details",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "id": "LG-REQ-004",
+      "name": "Required element present: Sterilization symbol",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "id": "LG-REQ-005",
+      "name": "Required element present: Product identifier",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "id": "LG-UDI-001:approved",
+      "name": "[approved] Barcode decodes to a GS1 GTIN",
+      "passed": true,
+      "detail": "0100812345678901"
+    },
+    {
+      "id": "LG-UDI-002:approved",
+      "name": "[approved] GTIN check digit valid",
+      "passed": true,
+      "detail": "00812345678901"
+    },
+    {
+      "id": "LG-UDI-003:approved",
+      "name": "[approved] Barcode matches printed UDI",
+      "passed": true,
+      "detail": "barcode=00812345678901 printed=00812345678901"
+    },
+    {
+      "id": "LG-UDI-001:revised",
+      "name": "[revised] Barcode decodes to a GS1 GTIN",
+      "passed": true,
+      "detail": "0100812345678994"
+    },
+    {
+      "id": "LG-UDI-002:revised",
+      "name": "[revised] GTIN check digit valid",
+      "passed": true,
+      "detail": "00812345678994"
+    },
+    {
+      "id": "LG-UDI-003:revised",
+      "name": "[revised] Barcode matches printed UDI",
+      "passed": true,
+      "detail": "barcode=00812345678994 printed=00812345678994"
+    }
+  ],
+  "overlays": {
+    "1": {
+      "old": "old_overlay_p1.png",
+      "new": "new_overlay_p1.png"
+    }
+  },
+  "pages": {
+    "old": [
+      "old_p1.png"
+    ],
+    "new": [
+      "new_p1.png"
+    ]
+  },
+  "elements": {
+    "old": [
+      {
+        "page": 1,
+        "elements": [
+          {
+            "type": "text",
+            "field": "ignored",
+            "value": "TEST DOCUMENT - FICTIONAL DATA - NOT A VALID MEDICAL LABEL (V1)",
+            "bbox": [
+              20.0,
+              10.5,
+              265.4,
+              20.1
+            ],
+            "confidence": 1.0,
+            "source": "embedded"
+          },
+          {
+            "type": "text",
+            "field": "product_name",
+            "value": "Cardiac Stent",
+            "bbox": [
+              30.0,
+              46.5,
+              171.8,
+              76.8
+            ],
+            "confidence": 1.0,
+            "source": "embedded"
+          },
+          {
+            "type": "text",
+            "field": "product_id",
+            "value": "REF: STENT101",
+            "bbox": [
+              30.0,
+              80.2,
+              112.5,
+              95.3
+            ],
+            "confidence": 1.0,
+            "source": "embedded"
+          },
+          {
+            "type": "text",
+            "field": "sterilization_statement",
+            "value": "Sterilized using ethylene oxide",
+            "bbox": [
+              140.0,
+              149.2,
+              275.1,
+              163.0
+            ],
+            "confidence": 1.0,
+            "source": "embedded"
+          },
+          {
+            "type": "text",
+            "field": "safety_warnings",
+            "value": "WARNING: Do not reuse. Do not use if package is damaged.",
+            "bbox": [
+              30.0,
+              219.3,
+              315.6,
+              233.1
+            ],
+            "confidence": 1.0,
+            "source": "embedded"
+          },
+          {
+            "type": "text",
+            "field": "manufacturer_details",
+            "value": "Manufacturer: MediCore Devices Pvt. Ltd. 12 Industrial Area, Lucknow, India",
+            "bbox": [
+              30.0,
+              259.2,
+              215.6,
+              288.0
+            ],
+            "confidence": 1.0,
+            "source": "embedded"
+          },
+          {
+            "type": "text",
+            "field": "udi",
+            "value": "UDI: (01) 00812345678901",
+            "bbox": [
+              160.0,
+              339.2,
+              281.2,
+              353.0
+            ],
+            "confidence": 1.0,
+            "source": "embedded"
+          },
+          {
+            "type": "barcode",
+            "field": "udi",
+            "value": "0100812345678901",
+            "format": "Data Matrix",
+            "bbox": [
+              36.5,
+              316.3,
+              133.4,
+              413.3
+            ],
+            "confidence": 1.0,
+            "source": "barcode"
+          },
+          {
+            "type": "symbol",
+            "field": "logo",
+            "value": "logo",
+            "bbox": [
+              270.0,
+              55.0,
+              360.0,
+              100.0
+            ],
+            "confidence": 1.0,
+            "source": "symbol_matcher"
+          },
+          {
+            "type": "symbol",
+            "field": "sterilization_symbol",
+            "value": "sterile_eo",
+            "bbox": [
+              30.0,
+              130.0,
+              126.0,
+              190.0
+            ],
+            "confidence": 1.0,
+            "source": "symbol_matcher"
+          }
+        ]
+      }
+    ],
+    "new": [
+      {
+        "page": 1,
+        "elements": [
+          {
+            "type": "text",
+            "field": "ignored",
+            "value": "TEST DOCUMENT - FICTIONAL DATA - NOT A VALID MEDICAL LABEL (V2)",
+            "bbox": [
+              20.0,
+              10.5,
+              265.4,
+              20.1
+            ],
+            "confidence": 1.0,
+            "source": "embedded"
+          },
+          {
+            "type": "text",
+            "field": "product_name",
+            "value": "Cardiac Stent",
+            "bbox": [
+              30.0,
+              46.5,
+              171.8,
+              76.8
+            ],
+            "confidence": 1.0,
+            "source": "embedded"
+          },
+          {
+            "type": "text",
+            "field": "product_id",
+            "value": "REF: STENT101",
+            "bbox": [
+              30.0,
+              80.2,
+              112.5,
+              95.3
+            ],
+            "confidence": 1.0,
+            "source": "embedded"
+          },
+          {
+            "type": "text",
+            "field": "sterilization_statement",
+            "value": "Sterilized using irradiation",
+            "bbox": [
+              140.0,
+              149.2,
+              254.5,
+              163.0
+            ],
+            "confidence": 1.0,
+            "source": "embedded"
+          },
+          {
+            "type": "text",
+            "field": "manufacturer_details",
+            "value": "Manufacturer: MediCore Devices Pvt. Ltd. 12 Industrial Area, Lucknow, India",
+            "bbox": [
+              30.0,
+              259.2,
+              215.6,
+              288.0
+            ],
+            "confidence": 1.0,
+            "source": "embedded"
+          },
+          {
+            "type": "text",
+            "field": "udi",
+            "value": "UDI: (01) 00812345678994",
+            "bbox": [
+              160.0,
+              339.2,
+              281.2,
+              353.0
+            ],
+            "confidence": 1.0,
+            "source": "embedded"
+          },
+          {
+            "type": "barcode",
+            "field": "udi",
+            "value": "0100812345678994",
+            "format": "Data Matrix",
+            "bbox": [
+              36.5,
+              316.3,
+              133.4,
+              413.3
+            ],
+            "confidence": 1.0,
+            "source": "barcode"
+          },
+          {
+            "type": "symbol",
+            "field": "logo",
+            "value": "logo",
+            "bbox": [
+              288.0,
+              55.0,
+              378.0,
+              100.0
+            ],
+            "confidence": 1.0,
+            "source": "symbol_matcher"
+          },
+          {
+            "type": "symbol",
+            "field": "sterilization_symbol",
+            "value": "sterile_radiation",
+            "bbox": [
+              30.0,
+              130.0,
+              126.0,
+              190.0
+            ],
+            "confidence": 1.0,
+            "source": "symbol_matcher"
+          }
+        ]
+      }
+    ]
+  },
+  "processing_seconds": 0.45
+}

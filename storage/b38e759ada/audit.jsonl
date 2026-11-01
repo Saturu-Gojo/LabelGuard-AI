@@ -1,0 +1,5 @@
+{"timestamp": "2026-11-01T22:25:08", "actor": "demo.user", "action": "JOB_CREATED", "detail": "STENT101 V1->V2"}
+{"timestamp": "2026-11-01T22:25:08", "actor": "system", "action": "CONTRACT_GENERATED", "detail": "heuristic"}
+{"timestamp": "2026-11-01T22:25:14", "actor": "demo.user", "action": "CONTRACT_CONFIRMED", "detail": "{\"allowed_changes\": [{\"field\": \"sterilization_symbol\", \"expected_value\": \"radiation\"}, {\"field\": \"sterilization_statement\", \"expected_value\": \"radiation\"}], \"protected_fields\": [\"udi\", \"product_id\", \"manufacturer_details\", \"safety_warnings\"]}"}
+{"timestamp": "2026-11-01T22:25:14", "actor": "system", "action": "INSPECTION_STARTED", "detail": ""}
+{"timestamp": "2026-11-01T22:25:14", "actor": "system", "action": "INSPECTION_COMPLETE", "detail": "{\"passed_checks\": 14, \"failed_checks\": 3, \"critical_flags\": 2, \"review_flags\": 1, \"unexpected\": 2, \"expected\": 2, \"total_findings\": 5}"}

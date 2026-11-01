@@ -1,0 +1,10 @@
+services:
+  labelguard:
+    build: .
+    ports: ["8000:7860"]
+    environment:
+      LG_BASIC_PASS: ""        # set a password to protect a public demo
+      ANTHROPIC_API_KEY: ""    # optional: LLM contract extraction and explanations
+    volumes: ["lg-data:/data"]
+volumes:
+  lg-data:

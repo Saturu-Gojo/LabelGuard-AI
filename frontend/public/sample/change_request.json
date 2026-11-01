@@ -1,0 +1,10 @@
+{
+  "product_id": "STENT101",
+  "product_name": "Cardiac Stent",
+  "market": "EU",
+  "language": "English",
+  "old_version": "V1",
+  "new_version": "V2",
+  "change_reason": "Sterilization update",
+  "change_request": "Update the sterilization method from EO to Radiation. Keep UDI, product identification, manufacturer details, and safety warnings unchanged."
+}
